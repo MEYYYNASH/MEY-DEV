@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="km" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BORMEY.DEV — អ្នកអភិវឌ្ឍន៍ច្នៃប្រឌិត & អ្នករចនា UI/UX</title>
+  <meta name="description" content="គេហទំព័រស្នាដៃរបស់ ពេជ្រពេញបូណ៌មី (PICHPENH BORMEY / BORMEY.DEV) - អ្នកអភិវឌ្ឍន៍ច្នៃប្រឌិត, អ្នករចនា UI/UX, និងអ្នកបង្កើតឌីជីថលនៅកម្ពុជា។">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2230%22 fill=%22%23A3E635%22/><text y=%22.75em%22 x=%22.25em%22 font-size=%2270%22 font-family=%22sans-serif%22 font-weight=%22bold%22 fill=%22%231E1B18%22>B</text></svg>">
+
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+
+  <!-- Preloader Loading Screen -->
+  <div class="preloader-overlay" id="preloader">
+    <div class="preloader-card pop-card">
+      <div class="preloader-logo">
+        <span class="logo-dot"></span>
+        <span>BORMEY<span style="color: var(--accent-pink);">.DEV</span></span>
+      </div>
+      <div class="preloader-bar-bg">
+        <div class="preloader-bar-fill" id="preloaderFill"></div>
+      </div>
+      <p class="preloader-text">កំពុងដំណើរការ...</p>
+    </div>
+  </div>
+
+  <!-- Floating Animated Doodles Background -->
+  <div class="doodle-bg">
+    <svg class="doodle-item" style="top: 10%; left: 4%; width: 45px;" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6">
+      <path d="M50 0L63 37L100 50L63 63L50 100L37 63L0 50L37 37Z" fill="#A3E635"/>
+    </svg>
+    <svg class="doodle-item" style="top: 25%; right: 5%; width: 60px; animation-delay: -2s;" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6">
+      <path d="M20 50 Q 50 10 80 50 T 140 50" fill="none" stroke="#FF70A6"/>
+    </svg>
+    <svg class="doodle-item" style="top: 60%; left: 3%; width: 50px; animation-delay: -4s;" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6">
+      <circle cx="50" cy="50" r="35" fill="#38BDF8"/>
+    </svg>
+    <svg class="doodle-item" style="top: 80%; right: 6%; width: 40px; animation-delay: -1s;" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6">
+      <path d="M10 10 L90 90 M90 10 L10 90" stroke="#FACC15"/>
+    </svg>
+  </div>
+
+  <!-- Header Navigation -->
+  <header class="header-nav">
+    <div class="container">
+      <nav class="nav-wrapper">
+        <a href="#home" class="logo">
+          <span class="logo-dot"></span>
+          <span>BORMEY<span style="color: var(--accent-pink);">.DEV</span></span>
+        </a>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home" class="nav-link active">ទំព័រដើម</a></li>
+          <li><a href="#about" class="nav-link">អំពីខ្ញុំ</a></li>
+          <li><a href="#skills" class="nav-link">ជំនាញ</a></li>
+          <li><a href="#projects" class="nav-link">គម្រោង</a></li>
+          <li><a href="#contact" class="nav-link btn-contact">ទំនាក់ទំនង</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="btn btn-icon" id="themeToggleBtn" title="ប្តូរស្ទីល Dark/Light Mode">
+            <span id="themeIcon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            </span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Floating Dynamic Tap Button Island Navigation -->
+  <nav class="mobile-bottom-island" id="islandNav">
+    <a href="#home" class="island-nav-item active" title="ទំព័រដើម">
+      <span class="island-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      </span>
+      <span class="island-label">ទំព័រដើម</span>
+    </a>
+    <a href="#about" class="island-nav-item" title="អំពីខ្ញុំ">
+      <span class="island-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </span>
+      <span class="island-label">អំពីខ្ញុំ</span>
+    </a>
+    <a href="#skills" class="island-nav-item" title="ជំនាញ">
+      <span class="island-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+      </span>
+      <span class="island-label">ជំនាញ</span>
+    </a>
+    <a href="#projects" class="island-nav-item" title="គម្រោង">
+      <span class="island-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+      </span>
+      <span class="island-label">គម្រោង</span>
+    </a>
+    <a href="#contact" class="island-nav-item btn-contact" data-contact="true" title="ទំនាក់ទំនង">
+      <span class="island-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      </span>
+      <span class="island-label">ទំនាក់ទំនង</span>
+    </a>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="home">
+    <div class="container">
+      <div class="hero-single-column">
+        
+        <!-- TOP: Standalone Profile Card with CLEAN TYPOGRAPHY & VECTOR SVGs -->
+        <div class="hero-profile-stage">
+          <div class="hero-profile-card pop-card">
+            <!-- Availability badge inside profile card -->
+            <div class="hero-badge card-badge-top">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              <span>បើកទទួលការសហការ និងគម្រោងថ្មីៗ</span>
+            </div>
+
+            <!-- Avatar photo container -->
+            <div class="hero-photo-container">
+              <img src="./assets/images/sthapor_avatar.jpg" alt="PICH PENHBORMEY Avatar Photo" class="hero-profile-img">
+              <span class="status-badge-online">
+                <span class="status-dot-green"></span>
+                <span>Available</span>
+              </span>
+            </div>
+
+            <!-- DUAL-TONE NAME BANNER (PICHPENH / BORMEY) -->
+            <div class="hero-name-typography">
+              <span class="name-line-solid">PICHPENH</span>
+              <span class="name-line-outline">BORMEY</span>
+            </div>
+
+            <!-- Handle with verified checkmark badge -->
+            <p class="hero-profile-handle">
+              <span class="badge-verified">✓</span>
+              <span>@BormeyDev · STUDENT</span>
+            </p>
+
+            <!-- Roles subtitle inside profile card -->
+            <p class="profile-card-role">
+              អ្នកអភិវឌ្ឍន៍ច្នៃប្រឌិត · អ្នករចនា UI/UX · អ្នកបង្កើតឌីជីថល
+            </p>
+
+            <!-- Skill Tags with Clean Vector SVGs -->
+            <div class="hero-profile-tags">
+              <span class="hero-tag-pill">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                Figma 96%
+              </span>
+              <span class="hero-tag-pill">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                Web Dev
+              </span>
+              <span class="hero-tag-pill">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                Clean UI
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- UNDER PROFILE: Action Buttons & Stats Row -->
+        <div class="hero-content">
+          <div class="hero-ctas">
+            <a href="#projects" class="btn btn-primary">
+              <span>មើលស្នាដៃ</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/></svg>
+            </a>
+            <button class="btn btn-secondary btn-contact">
+              <span>ទាក់ទងខ្ញុំ</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </button>
+            <button class="btn btn-blue" id="cvModalBtn">
+              <span>ទាញយក CV</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg>
+            </button>
+          </div>
+
+          <div class="hero-stats-row">
+            <div class="stat-item">
+              <span class="stat-num">12+</span>
+              <span class="stat-lbl">គម្រោងដែលបានបង្កើត</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">96%</span>
+              <span class="stat-lbl">ជំនាញ Figma</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">95%</span>
+              <span class="stat-lbl">គុណភាពកូដ</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">100%</span>
+              <span class="stat-lbl">ការប្តេជ្ញាចិត្ត</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- About Me Section with Real CV Education & Bio -->
+  <section class="section-padding" id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-pill">អំពីខ្ញុំ & ប្រវត្តិរូប</span>
+        <h2 class="section-title">អំពីរូបខ្ញុំ & ការសិក្សា</h2>
+        <p class="section-subtitle">បម្លែងគំនិត ឲ្យក្លាយជាបទពិសោធន៍ឌីជីថលដ៏ទាក់ទាញ</p>
+      </div>
+
+      <div class="about-grid">
+        <!-- Bio Card -->
+        <div class="about-card pop-card">
+          <h3 class="about-card-title" style="display: flex; align-items: center; gap: 0.5rem;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span>អត្តសញ្ញាណអ្នកអភិវឌ្ឍន៍ច្នៃប្រឌិត</span>
+          </h3>
+          <p>
+            ខ្ញុំឈ្មោះ <strong>ពេជ្រពេញបូណ៌មី (STHAPOR PICHPENHBORMEY)</strong> អាយុ ២០ ឆ្នាំ កើតនៅខេត្តកណ្តាល ជាសិស្ស/និស្សិត ដែលមាន Passion ខ្ពស់លើការអភិវឌ្ឍន៍ Web Development, UX/UI Design, IT Support, និង Graphic Design។
+          </p>
+          
+          <div style="margin-top: 1.2rem; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.88rem;">
+            <div><strong>អាយុ / Age:</strong> 20 Years Old</div>
+            <div><strong>សញ្ជាតិ / National:</strong> Khmer (ខ្មែរ)</div>
+            <div><strong>ទីកន្លែងកំណើត / Place of Birth:</strong> Kandal (ខេត្តកណ្តាល)</div>
+            <div><strong>ចំណង់ចំណូលចិត្ត / Hobby:</strong> Listening to music, IT & Design Research</div>
+            <div><strong>ភាសា / Languages:</strong> Khmer (Native), English (Professional)</div>
+          </div>
+
+          <div class="signature-box">
+            <span style="font-weight: 700; font-size: 0.85rem;">ហត្ថលេខាអ្នកបង្កើត</span>
+            <span class="signature-svg">P.Bormey</span>
+          </div>
+        </div>
+
+        <!-- Education & Experience Timeline Card -->
+        <div class="about-card pop-card" style="background: var(--accent-lime); color: #1E1B18;">
+          <h3 class="about-card-title" style="display: flex; align-items: center; gap: 0.5rem;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            <span>ការសិក្សា & បទពិសោធន៍ (Education)</span>
+          </h3>
+
+          <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem;">
+            <div style="background: rgba(255,255,255,0.7); padding: 0.8rem; border-radius: var(--radius-md); border: 2px solid var(--border-ink);">
+              <span style="font-weight: 800; font-size: 0.8rem; background: #1E1B18; color: #FFF; padding: 0.15rem 0.5rem; border-radius: 99px;">2023 - 2026</span>
+              <h4 style="font-size: 1.05rem; font-weight: 800; margin-top: 0.3rem;">SETEC INSTITUTE</h4>
+              <p style="font-size: 0.85rem; font-weight: 700; color: #1E1B18;">Management Information System (MIS) · Staff / Member Support</p>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.7); padding: 0.8rem; border-radius: var(--radius-md); border: 2px solid var(--border-ink);">
+              <span style="font-weight: 800; font-size: 0.8rem; background: #1E1B18; color: #FFF; padding: 0.15rem 0.5rem; border-radius: 99px;">2018 - 2023</span>
+              <h4 style="font-size: 1.05rem; font-weight: 800; margin-top: 0.3rem;">HUN SEN SEREYPHEAP HIGH SCHOOL</h4>
+              <p style="font-size: 0.85rem; font-weight: 700; color: #1E1B18;">High School Diploma (សញ្ញាបត្រមធ្យមសិក្សាទុតិយភូមិ)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="section-padding" id="skills" style="background: rgba(0,0,0,0.02);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-pill">ជំនាញ</span>
+        <h2 class="section-title">ជំនាញ និងសមត្ថភាព</h2>
+        <p class="section-subtitle">បច្ចេកវិទ្យា និងឧបករណ៍ច្នៃប្រឌិតដែលខ្ញុំប្រើប្រាស់</p>
+      </div>
+
+      <div class="skills-nav">
+        <button class="skill-tab-btn active" data-tab="dev">ការអភិវឌ្ឍកូដ (Development)</button>
+        <button class="skill-tab-btn" data-tab="design">ការរចនា UI / UX & Graphic</button>
+        <button class="skill-tab-btn" data-tab="tools">ឧបករណ៍ច្នៃប្រឌិត & ផលិតភាព</button>
+      </div>
+
+      <div class="skills-grid" id="skillsGrid">
+        <!-- Rendered dynamically by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="section-padding" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-pill">គម្រោង</span>
+        <h2 class="section-title">ស្នាដៃគម្រោង</h2>
+        <p class="section-subtitle">កូដស្អាត ឧបករណ៍ប្រើប្រាស់ និង UI ច្នៃប្រឌិត</p>
+      </div>
+
+      <div class="projects-filter-bar">
+        <button class="filter-btn active" data-filter="all">គម្រោងទាំងអស់</button>
+        <button class="filter-btn" data-filter="utility">ឧបករណ៍ & Bots</button>
+        <button class="filter-btn" data-filter="ai">AI & លំហធ្វើការ</button>
+        <button class="filter-btn" data-filter="social">បណ្តាញសង្គម</button>
+        <button class="filter-btn" data-filter="productivity">ផលិតភាព</button>
+      </div>
+
+      <div class="projects-grid" id="projectsGrid">
+        <!-- Rendered dynamically by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="logo">
+        <span class="logo-dot"></span>
+        <span>BORMEY<span style="color: var(--accent-pink);">.DEV</span></span>
+      </div>
+      <p style="font-weight: 600; font-size: 0.9rem;">
+        រចនាឡើងដោយក្តីស្រឡាញ់ កូដស្អាត និងស្ទីល Pop Neo-Brutalism។
+      </p>
+      <p style="font-size: 0.8rem; color: var(--text-muted);">
+        © 2026 ពេជ្រពេញបូណ៌មី (PICHPENH BORMEY / BORMEY.DEV) | Phone: 087 574 018 | Email: penhbormey011427809@gmail.com
+      </p>
+    </div>
+  </footer>
+
+  <!-- Modal Component for Project Details -->
+  <div class="modal-backdrop" id="projectModal">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="modalCloseBtn">✕</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- INTERACTIVE CV / RESUME MODAL -->
+  <div class="modal-backdrop" id="cvModal">
+    <div class="modal-card compact-contact-modal" style="max-width: 520px;">
+      <button class="modal-close-btn" id="cvModalCloseBtn">✕</button>
+
+      <div class="modal-contact-header">
+        <h2>CURRICULUM VITAE (CV) 📄</h2>
+        <p>STHAPOR PICHPENHBORMEY | STUDENT & DEVELOPER</p>
+      </div>
+
+      <div class="modal-contact-body">
+        <div style="background: var(--bg-cream); padding: 1rem; border-radius: var(--radius-md); border: 2px solid var(--border-ink);">
+          <h3 style="font-family: var(--font-heading); font-size: 1.2rem; font-weight: 900;">STHAPOR PICHPENHBORMEY</h3>
+          <p style="font-size: 0.85rem; color: var(--text-muted); font-weight: 700;">📞 087 574 018 | ✉️ penhbormey011427809@gmail.com</p>
+          <p style="font-size: 0.82rem; font-weight: 600; margin-top: 0.4rem;">
+            <strong>National:</strong> Khmer | <strong>Age:</strong> 20 | <strong>Place of Birth:</strong> Kandal
+          </p>
+        </div>
+
+        <div style="margin-top: 0.6rem;">
+          <h4 style="font-weight: 800; font-size: 0.95rem; border-bottom: 2px solid var(--border-ink); padding-bottom: 0.2rem; margin-bottom: 0.5rem;">🎓 EDUCATION (ការសិក្សា)</h4>
+          <div style="font-size: 0.85rem; line-height: 1.5;">
+            <div><strong>2023 - 2026:</strong> SETEC INSTITUTE — Management Information System (MIS)</div>
+            <div><strong>2018 - 2023:</strong> HUNSEN SEREYPHEAP HIGH SCHOOL — High School Diploma</div>
+          </div>
+        </div>
+
+        <div style="margin-top: 0.6rem;">
+          <h4 style="font-weight: 800; font-size: 0.95rem; border-bottom: 2px solid var(--border-ink); padding-bottom: 0.2rem; margin-bottom: 0.5rem;">💼 EXPERIENCE & ROLES</h4>
+          <div style="font-size: 0.85rem; line-height: 1.5;">
+            <div>• SETEC Institute Staff (Sell & Member Support)</div>
+            <div>• Web Development & UX/UI Design</div>
+            <div>• IT Support Manager & Graphic Design</div>
+            <div>• Studio Photography & Basic Accounting Knowledge</div>
+          </div>
+        </div>
+
+        <div style="margin-top: 0.6rem;">
+          <h4 style="font-weight: 800; font-size: 0.95rem; border-bottom: 2px solid var(--border-ink); padding-bottom: 0.2rem; margin-bottom: 0.5rem;">🌐 LANGUAGES & HOBBIES</h4>
+          <div style="font-size: 0.85rem; line-height: 1.5;">
+            <div>• <strong>Languages:</strong> Khmer, English</div>
+            <div>• <strong>Hobbies:</strong> Listening to music, IT & Design Research</div>
+          </div>
+        </div>
+
+        <button onclick="window.print()" class="btn btn-primary" style="width: 100%; margin-top: 0.8rem;">
+          <span>បោះពុម្ព ឬ រក្សាទុក CV (Print / Save PDF)</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ULTRA-COMPACT CONTACT & SOCIALS MODAL POPUP -->
+  <div class="modal-backdrop" id="contactModal">
+    <div class="modal-card compact-contact-modal">
+      <button class="modal-close-btn" id="contactModalCloseBtn">✕</button>
+
+      <div class="modal-contact-header">
+        <h2 style="display: flex; align-items: center; gap: 0.4rem;">
+          <span>តោះបង្កើតគម្រោងជាមួយគ្នា</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/></svg>
+        </h2>
+        <p>ផ្ញើសារមកកាន់ខ្ញុំ ឬតភ្ជាប់តាមបណ្តាញសង្គមខាងក្រោម៖</p>
+      </div>
+
+      <div class="modal-contact-body">
+        <!-- Compact Contact Form -->
+        <form id="compactContactForm">
+          <div class="form-group">
+            <label class="form-label">ឈ្មោះពេញរបស់អ្នក</label>
+            <input type="text" class="form-input" required placeholder="ឧទាហរណ៍៖ សុខ ចាន់">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">អាសយដ្ឋានអ៊ីមែល</label>
+            <input type="email" class="form-input" required placeholder="name@example.com">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">លម្អិតគម្រោង ឬសាររបស់អ្នក</label>
+
+            <!-- Quick Template Chips Selector with Clean Vector SVGs -->
+            <div class="message-templates-wrapper">
+              <span class="template-label">ជ្រើសរើស គំរូសាររហ័ស (Quick Template):</span>
+              <div class="template-chips-grid">
+                <button type="button" class="template-chip" data-template="web">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                  <span>គេហទំព័រថ្មី</span>
+                </button>
+                <button type="button" class="template-chip" data-template="uiux">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                  <span>រចនា UI/UX</span>
+                </button>
+                <button type="button" class="template-chip" data-template="consult">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                  <span>ប្រឹក្សាយោបល់</span>
+                </button>
+                <button type="button" class="template-chip" data-template="collab">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                  <span>សហការការងារ</span>
+                </button>
+              </div>
+            </div>
+
+            <textarea class="form-textarea" id="contactMsgInput" rows="3" required placeholder="រៀបរាប់អំពីគម្រោងរបស់អ្នក ឬចុចជ្រើសរើស Template ខាងលើ..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.6rem 1rem;">
+            <span>ផ្ញើសារឥឡូវនេះ</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
+        </form>
+
+        <!-- Compact Socials Section with Official Compound Path Vector SVGs -->
+        <div class="compact-socials-section">
+          <h4 class="compact-socials-title">តភ្ជាប់តាមបណ្តាញសង្គម</h4>
+          <p class="compact-socials-sub">តាមដានព័ត៌មានអាប់ដេតគម្រោងចុងក្រោយ ការពិសោធន៍កូដ និងការរចនា UI៖</p>
+          <div class="compact-social-pills">
+            <!-- Official GitHub Compound Path SVG -->
+            <a href="https://github.com/MEYYYNASH/MEY-DEV" target="_blank" rel="noopener" class="social-pill-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+              <span>GitHub</span>
+            </a>
+
+            <!-- Official Telegram Compound Path SVG -->
+            <a href="https://t.me/ShennCelest" target="_blank" rel="noopener" class="social-pill-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.69-.52.36-1 .54-1.42.53-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.37-.49 1.02-.74 3.99-1.74 6.66-2.89 8.01-3.45 3.81-1.59 4.6-1.87 5.12-1.88.11 0 .37.03.54.17.14.12.18.28.2.45-.02.07-.02.26-.04.42z"/>
+              </svg>
+              <span>Telegram</span>
+            </a>
+
+            <!-- Official Messenger Compound Path SVG -->
+            <a href="https://m.me/JaxFrez" target="_blank" rel="noopener" class="social-pill-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.477 2 2 6.145 2 11.258c0 2.91 1.45 5.502 3.715 7.172V22l3.418-1.875c.917.254 1.892.39 2.867.39 5.523 0 10-4.145 10-9.257C22 6.145 17.523 2 12 2zm1.092 12.352l-2.583-2.756-5.04 2.756 5.544-5.88 2.646 2.756 4.977-2.756-5.544 5.88z"/>
+              </svg>
+              <span>Messenger</span>
+            </a>
+
+            <!-- Official Instagram Compound Path SVG (Filled Vector Cutout) -->
+            <a href="https://instagram.com/sthapor" target="_blank" rel="noopener" class="social-pill-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+              <span>Instagram</span>
+            </a>
+
+            <!-- Official TikTok Compound Path SVG -->
+            <a href="https://tiktok.com/@sthapor" target="_blank" rel="noopener" class="social-pill-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.29 0 .58.04.85.12V9.4a6.33 6.33 0 0 0-1-.08A6.34 6.34 0 0 0 3 15.66a6.34 6.34 0 0 0 10.86 4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.15z"/>
+              </svg>
+              <span>TikTok</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-notice" id="toast"></div>
+
+  <!-- Scripts -->
+  <script src="./js/data.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+</html>
